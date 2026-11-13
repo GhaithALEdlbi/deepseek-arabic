@@ -1,0 +1,68 @@
+:root { font-family: Tahoma, Arial, sans-serif; color: #203b40; background: #f8faf9; font-synthesis: none; --teal: #087f70; }
+* { box-sizing: border-box; }
+body { width: 380px; margin: 0; font-size: 12px; line-height: 1.5; max-height: 600px; overflow-y: auto; }
+button, input { font: inherit; }
+.header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #fff; border-bottom: 1px solid #e7eeeb; }
+.brand { display: flex; align-items: center; gap: 10px; }
+h1, h2, p { margin: 0; }
+h1 { font-size: 17px; line-height: 1.6; letter-spacing: -.3px; }
+.brand p { color: #72827e; font-size: 10px; margin-top: 1px; }
+.version { font: 10px ui-monospace, monospace; color: #81928c; background: #f4f7f5; padding: 5px 7px; border: 1px solid #e8eeeb; border-radius: 6px; }
+main { padding: 10px 20px 0; }
+.activation { display: flex; align-items: center; justify-content: space-between; padding: 8px 13px; background: #eaf5ef; border: 1px solid #d7e9de; border-radius: 12px; }
+.activation h2 { font-size: 13px; margin-bottom: 5px; color: #1c554a; }
+.activation p { font-size: 10px; color: #587b6d; }
+.switch { position: relative; width: 38px; height: 22px; flex-shrink: 0; cursor: pointer; }
+.switch input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; z-index: 1; cursor: pointer; }
+.switch-track { display: block; width: 38px; height: 22px; border-radius: 20px; background: #9aa9a2; transition: background .15s; }
+.switch-track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; background: white; border-radius: 50%; box-shadow: 0 1px 3px #153f4420; transition: transform .15s; }
+.switch input:checked + .switch-track { background: var(--teal); }
+.switch input:checked + .switch-track::after { transform: translateX(16px); }
+.switch input:focus-visible + .switch-track { outline: 3px solid #8fcdb8; outline-offset: 3px; }
+fieldset { border: 0; margin: 12px 0 0; padding: 0; min-width: 0; }
+.section-label { padding: 0; margin-bottom: 8px; font-size: 11px; font-weight: 700; color: #46625b; }
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.mode { position: relative; cursor: pointer; }
+.mode input { position: absolute; opacity: 0; }
+.mode > span { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 2px; border: 1px solid #e0e8e3; background: #fff; border-radius: 10px; transition: border-color .15s, background .15s; }
+.mode .mode-icon { font-family: Arial, sans-serif; line-height: 1; font-size: 20px; font-weight: 400; color: #6b847a; }
+.mode b { font-size: 11px; font-weight: 400; }
+.mode small { font-size: 9px; color: #7a8d83; }
+.mode input:checked + span { border-color: var(--teal); background: #ecf7f1; box-shadow: 0 0 0 1px var(--teal); }
+.mode input:checked + span .mode-icon, .mode input:checked + span b { color: var(--teal); }
+.mode input:focus-visible + span { outline: 3px solid #8fcdb8; outline-offset: 3px; }
+.mode-hint { margin: 5px 0 7px; color: #7b8b82; font-size: 9px; line-height: 1.7; min-height: 16px; }
+.reading-settings { background: #fff; border: 1px solid #e3eae5; border-radius: 11px; padding: 8px 13px 5px; }
+.font-row { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding-bottom: 5px; border-bottom: 1px solid #eff2ef; }
+.font-row b { display: block; font-size: 11px; font-weight: 400; }
+.font-row small { display: block; margin-top: 3px; color: #85938a; font-size: 9px; }
+.check { accent-color: var(--teal); width: 16px; height: 16px; cursor: pointer; }
+.size-heading { display: flex; align-items: center; justify-content: space-between; margin-top: 5px; font-size: 10px; }
+output { color: var(--teal); font: 10px ui-monospace, monospace; background: #edf6f0; padding: 3px 6px; border-radius: 4px; }
+.range-row { display: flex; align-items: center; gap: 10px; height: 24px; direction: ltr; color: #7c8d81; }
+.small-a { font-size: 12px; }.large-a { font-size: 19px; }
+input[type="range"] { width: 100%; height: 4px; accent-color: var(--teal); cursor: pointer; }
+.preview { margin-top: 12px; padding: 8px 13px; background: #fff; border: 1px solid #e3eae5; border-radius: 11px; }
+.preview-heading { display: flex; justify-content: space-between; align-items: center; padding-bottom: 7px; border-bottom: 1px dashed #e5ebe6; }
+.preview-heading h2 { font-size: 10px; font-weight: 400; color: #637d70; }
+.preview-heading > span { color: #7c9385; font-size: 8px; }
+i { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #4c9a75; vertical-align: middle; margin-inline-end: 4px; }
+#preview-content { padding-top: 6px; overflow-wrap: anywhere; }
+#preview-content p { font-size: var(--preview-size, 16px); line-height: 1.6; text-align: start; unicode-bidi: isolate; }
+#preview-en { color: #6a7d75; margin-top: 1px; }
+.code-preview { font: 9px/1.7 ui-monospace, SFMono-Regular, Consolas, monospace; color: #c5d5cc; background: #203c36; border-radius: 5px; padding: 5px 8px; margin-top: 4px; white-space: nowrap; overflow-x: auto; text-align: left; unicode-bidi: isolate; }
+.code-preview > span { color: #78cdb8; }.code-preview em { color: #c1d79e; font-style: normal; }
+.status { min-height: 23px; font-size: 9px; line-height: 1.7; padding-top: 5px; color: #7c8d82; text-align: center; }
+.status.error { color: #a33a30; }
+.open-deepseek { display: flex; justify-content: center; gap: 10px; align-items: center; background: #143e35; color: #f4fcf7; text-decoration: none; border-radius: 8px; padding: 7px; font-size: 11px; }
+.open-deepseek:hover { background: #205b4d; }
+.open-deepseek span { font-size: 15px; }
+footer { display: flex; justify-content: space-between; align-items: center; padding: 6px 20px; color: #8c9a90; font-size: 8px; }
+footer i { background: #9cafa0; width: 4px; height: 4px; }
+button { color: #758b7d; border: 0; background: none; padding: 4px 0; font-size: 9px; cursor: pointer; }
+button:hover { color: #087f70; }
+:is(a, button, .check, input[type="range"]):focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+fieldset:disabled { opacity: .45; }
+body[data-disabled] .activation { background: #eef0ee; border-color: #e0e4df; }
+body[data-disabled] .activation h2 { color: #66746c; }
+@media (prefers-reduced-motion: reduce) { *, *::after { transition: none !important; } }

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>DeepSeek عربي</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="core.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="icons/icon-48.png" width="40" height="40" alt="">
+      <div><h1><bdi>DeepSeek</bdi> عربي</h1><p>لغتين. قراءة واحدة مريحة.</p></div>
+    </div>
+    <span class="version" dir="ltr">v1.0</span>
+  </header>
+
+  <main>
+    <section class="activation" aria-labelledby="activation-title">
+      <div><h2 id="activation-title">العربي على راحته</h2><p id="activation-detail">تحسين اتجاه المحادثة والكتابة</p></div>
+      <label class="switch">
+        <input id="enabled" type="checkbox" role="switch" aria-label="تفعيل تحسين اتجاه النص" disabled>
+        <span class="switch-track" aria-hidden="true"></span>
+      </label>
+    </section>
+
+    <fieldset id="settings" disabled>
+      <legend class="section-label">اتجاه النص</legend>
+      <div class="modes">
+        <label class="mode"><input type="radio" name="mode" value="auto"><span><strong class="mode-icon" aria-hidden="true">⇄</strong><b>تلقائي</b><small>حسب كل فقرة</small></span></label>
+        <label class="mode"><input type="radio" name="mode" value="rtl"><span><strong class="mode-icon" aria-hidden="true">⇠</strong><b>من اليمين</b><small dir="ltr">RTL</small></span></label>
+        <label class="mode"><input type="radio" name="mode" value="ltr"><span><strong class="mode-icon" aria-hidden="true">⇢</strong><b>من اليسار</b><small dir="ltr">LTR</small></span></label>
+      </div>
+      <p class="mode-hint" id="mode-hint">العربي يمين، الإنجليزي يسار. حتى ضمن نفس الرد.</p>
+
+      <div class="reading-settings">
+        <label class="font-row" for="readable-font"><span><b>خط أوضح للعربي</b><small>خط محلي، بدون أي تحميل</small></span><input id="readable-font" type="checkbox" class="check"></label>
+        <div class="size-heading"><label for="font-size">حجم النص</label><output id="font-size-value" for="font-size" dir="ltr">16 px</output></div>
+        <div class="range-row"><span class="small-a" aria-hidden="true">أ</span><input id="font-size" type="range" min="14" max="22" step="1" value="16"><span class="large-a" aria-hidden="true">أ</span></div>
+      </div>
+    </fieldset>
+
+    <section class="preview" aria-labelledby="preview-title">
+      <div class="preview-heading"><h2 id="preview-title">هيك بيصير النص</h2><span><i aria-hidden="true"></i> معاينة مباشرة</span></div>
+      <div id="preview-content">
+        <p id="preview-ar">عربي وEnglish، بنفس المحادثة.</p>
+        <p id="preview-en" lang="en">Clear text. In both languages.</p>
+        <div class="code-preview" dir="ltr"><span>const</span> message = <em>"مرحباً بالعالم"</em>;</div>
+      </div>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite">جارٍ تحميل الإعدادات…</p>
+    <a class="open-deepseek" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">افتح DeepSeek <span aria-hidden="true">↗</span></a>
+  </main>
+  <footer><span><i aria-hidden="true"></i> إعداداتك على جهازك فقط</span><button id="reset" type="button" disabled>إعادة الضبط</button></footer>
+</body>
+</html>

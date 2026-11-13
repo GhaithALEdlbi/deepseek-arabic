@@ -1,0 +1,7 @@
+body { width: 280px; padding: 16px; margin: 0; font: 14px/1.6 Tahoma, Arial, sans-serif; color: #203b40; background: #f6faf7; }
+h1 { margin: 0 0 14px; font-size: 18px; }
+label { display: block; margin-bottom: 6px; }
+textarea { box-sizing: border-box; width: 100%; padding: 10px; font: inherit; resize: vertical; border: 1px solid #b0c8bb; border-radius: 8px; }
+button { width: 100%; margin-top: 10px; padding: 10px; border: 0; border-radius: 8px; background: #087f70; color: white; cursor: pointer; font: inherit; }
+button:disabled { opacity: .5; cursor: default; }
+#status { min-height: 22px; margin-bottom: 0; font-size: 12px; }

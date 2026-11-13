@@ -1,0 +1,11 @@
+{
+  "name": "deepseek-arabic",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An independent, local-only Arabic/English direction extension for DeepSeek.",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs",
+    "check": "node --check deepseek-arabic/core.js && node --check deepseek-arabic/content.js && node --check deepseek-arabic/popup.js",
+    "package": "python3 scripts/package.py"
+  }
+}

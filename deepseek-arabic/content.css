@@ -1,0 +1,50 @@
+/* Every rule is opt-in and scoped to chat content. The app layout is untouched. */
+html[data-dsa-enabled] :is([data-dsa-root], [data-dsa-block], [data-dsa-editor]) {
+  text-align: start !important;
+  unicode-bidi: isolate;
+}
+html[data-dsa-enabled] [data-dsa-direction="rtl"] { direction: rtl !important; }
+html[data-dsa-enabled] [data-dsa-direction="ltr"] { direction: ltr !important; }
+
+html[data-dsa-enabled] :is([data-dsa-root], [data-dsa-editor]) {
+  font-size: var(--dsa-font-size, 16px) !important;
+  line-height: 1.9 !important;
+}
+html[data-dsa-enabled] [data-dsa-block] { line-height: 1.9 !important; }
+html[data-dsa-enabled][data-dsa-font] :is([data-dsa-root], [data-dsa-editor]) {
+  font-family: Tahoma, Arial, sans-serif !important;
+}
+
+html[data-dsa-enabled] [data-dsa-root] :is(ul, ol) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-inline-start: 1.6em !important;
+}
+
+/* Preserve logical table column order; each cell has its own prose direction. */
+html[data-dsa-enabled] [data-dsa-root] table { direction: ltr !important; }
+html[data-dsa-enabled] [data-dsa-root] :is(pre, code, kbd, samp, .katex, .katex-display, .MathJax, mjx-container, math, [role="math"]) {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+}
+html[data-dsa-enabled] [data-dsa-root] :is(pre, pre *) {
+  direction: ltr !important;
+  text-align: left !important;
+}
+html[data-dsa-enabled] [data-dsa-root] pre {
+  line-height: 1.6 !important;
+  overflow-x: auto;
+}
+html[data-dsa-enabled] [data-dsa-root] :is(code, kbd, samp) {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace !important;
+}
+html[data-dsa-enabled] [data-dsa-root] :is(:not(pre) > code, kbd, samp, .katex, .MathJax, mjx-container, [data-dsa-inline]) {
+  display: inline-block;
+  unicode-bidi: isolate !important;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+html[data-dsa-enabled] [data-dsa-inline="ltr"] { direction: ltr !important; }
+html[data-dsa-enabled] [data-dsa-inline="rtl"] { direction: rtl !important; }
+html[data-dsa-enabled] [data-dsa-inline] { overflow-wrap: anywhere; }

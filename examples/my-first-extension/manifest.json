@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "أول إضافة إلي — مفكرة صغيرة",
+  "version": "1.0.0",
+  "description": "مثال تعليمي: مفكرة محلية صغيرة داخل نافذة الإضافة.",
+  "permissions": ["storage"],
+  "action": { "default_popup": "popup.html" }
+}
